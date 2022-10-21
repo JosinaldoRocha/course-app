@@ -4,8 +4,11 @@ import 'package:course_challenge/app/modules/home/models/your_courses_model.dart
 import 'package:flutter/material.dart';
 
 class CardCoursePageWidget extends StatelessWidget {
-  const CardCoursePageWidget(
-      {super.key, required this.lesson, required this.course});
+  const CardCoursePageWidget({
+    super.key,
+    required this.lesson,
+    required this.course,
+  });
   final LessonModel lesson;
   final YoursCoursesModel course;
 
