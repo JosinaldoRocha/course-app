@@ -18,7 +18,7 @@ class PercentIndicatorCoursePage extends StatelessWidget {
                 alignment: MainAxisAlignment.center,
                 width: 145,
                 lineHeight: 5,
-                percent: lesson.progressBarPercentage,
+                percent: lesson.percent,
                 barRadius: const Radius.circular(50),
                 backgroundColor: const Color.fromRGBO(196, 196, 196, 1),
                 progressColor: lesson.progressBarColor),

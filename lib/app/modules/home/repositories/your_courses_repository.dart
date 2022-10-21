@@ -10,14 +10,17 @@ class YourCoursesRepository {
     YoursCoursesModel(
         courseTitle: 'Spanish',
         backGroundColor: const Color.fromRGBO(255, 172, 43, 1),
+        id: 1,
         percentage: '15%'),
     YoursCoursesModel(
         courseTitle: 'Italian',
         backGroundColor: const Color.fromRGBO(0, 199, 82, 1),
+        id: 2,
         percentage: '15%'),
     YoursCoursesModel(
         courseTitle: 'English',
         backGroundColor: const Color.fromRGBO(19, 146, 219, 1),
+        id: 3,
         percentage: '15%'),
     // YoursCoursesModel(
     //     courseTitle: 'Spanish',

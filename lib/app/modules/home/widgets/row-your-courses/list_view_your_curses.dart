@@ -32,15 +32,10 @@ class _ListViewYourCoursesState extends State<ListViewYourCourses> {
         itemBuilder: (context, course) {
           return GestureDetector(
             onTap: () {
-              Navigator.push(
+              Navigator.pushNamed(
                 context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    return CoursePage(
-                      course: yourCourses[course],
-                    );
-                  },
-                ),
+                '/course-page',
+                arguments: yourCourses[course],
               );
             },
             child: _buildYourCourses(yourCourses[course]),

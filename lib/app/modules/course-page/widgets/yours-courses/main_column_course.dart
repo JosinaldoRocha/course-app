@@ -39,7 +39,7 @@ class ColumnCardCoursePageWidget extends StatelessWidget {
           ),
           const SizedBox(height: 16),
           TextWidget(
-            text: course.courseTitle,
+            text: lesson.lessonTitle,
             size: 14,
             color: const Color.fromRGBO(23, 42, 135, 1),
             weight: FontWeight.w500,
@@ -47,7 +47,7 @@ class ColumnCardCoursePageWidget extends StatelessWidget {
           ),
           const SizedBox(height: 6),
           TextWidget(
-            text: lesson.progressNumber,
+            text: lesson.progressText,
             size: 18,
             color: const Color.fromRGBO(23, 42, 135, 1),
             weight: FontWeight.w500,
