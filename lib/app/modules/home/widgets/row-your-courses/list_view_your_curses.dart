@@ -1,19 +1,20 @@
+import 'package:course_challenge/app/modules/course-page/course_page.dart';
 import 'package:course_challenge/app/modules/home/models/your_courses_model.dart';
 import 'package:course_challenge/app/modules/home/repositories/your_courses_repository.dart';
 import 'package:course_challenge/app/modules/home/widgets/row-your-courses/progress_indicator_your_courses.dart';
-import 'package:course_challenge/app/shared/text_widget.dart';
+import 'package:course_challenge/app/shared/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
 
-class ListYourCoursesWidget extends StatefulWidget {
-  const ListYourCoursesWidget({
+class ListViewYourCourses extends StatefulWidget {
+  const ListViewYourCourses({
     super.key,
   });
 
   @override
-  State<ListYourCoursesWidget> createState() => _ListYourCoursesWidgetState();
+  State<ListViewYourCourses> createState() => _ListViewYourCoursesState();
 }
 
-class _ListYourCoursesWidgetState extends State<ListYourCoursesWidget> {
+class _ListViewYourCoursesState extends State<ListViewYourCourses> {
   @override
   Widget build(BuildContext context) {
     final yourCourses = YourCoursesRepository().getAll();
@@ -28,14 +29,21 @@ class _ListYourCoursesWidgetState extends State<ListYourCoursesWidget> {
           );
         },
         itemCount: yourCourses.length,
-        itemBuilder: (context, index) {
+        itemBuilder: (context, course) {
           return GestureDetector(
             onTap: () {
-              if (yourCourses[index].courseTitle == 'Italian') {
-                Navigator.pushNamed(context, '/course-page');
-              }
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return CoursePage(
+                      course: yourCourses[course],
+                    );
+                  },
+                ),
+              );
             },
-            child: _buildYourCourses(yourCourses[index]),
+            child: _buildYourCourses(yourCourses[course]),
           );
         },
       ),
@@ -48,44 +56,51 @@ class _ListYourCoursesWidgetState extends State<ListYourCoursesWidget> {
       height: 91,
       width: 114,
       decoration: BoxDecoration(
-          color: course.backGroundColor,
-          borderRadius: BorderRadius.circular(10)),
-      child: Stack(children: [
-        Positioned(
+        color: course.backGroundColor,
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Stack(
+        children: [
+          Positioned(
             left: 65,
             top: 32,
             child: ProgressIndicatorYourCourses(
               color: course.backGroundColor,
-            )),
-        Positioned(
-          left: 71,
-          top: 48,
-          child: TextWidget(
-            text: course.percentage,
-            size: 8,
-            color: const Color.fromRGBO(52, 52, 52, 1),
-            weight: FontWeight.w700,
-            align: TextAlign.start,
+            ),
           ),
-        ),
-        Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          TextWidget(
-            text: course.courseTitle,
-            size: 18,
-            color: const Color.fromRGBO(255, 255, 255, 1),
-            weight: FontWeight.w700,
-            align: TextAlign.start,
+          Positioned(
+            left: 71,
+            top: 48,
+            child: TextWidget(
+              text: course.percentage,
+              size: 8,
+              color: const Color.fromRGBO(52, 52, 52, 1),
+              weight: FontWeight.w700,
+              align: TextAlign.start,
+            ),
           ),
-          const SizedBox(height: 4),
-          const TextWidget(
-            text: 'Begginer',
-            size: 12,
-            color: Color.fromRGBO(255, 255, 255, 1),
-            weight: FontWeight.w700,
-            align: TextAlign.start,
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              TextWidget(
+                text: course.courseTitle,
+                size: 18,
+                color: const Color.fromRGBO(255, 255, 255, 1),
+                weight: FontWeight.w700,
+                align: TextAlign.start,
+              ),
+              const SizedBox(height: 4),
+              const TextWidget(
+                text: 'Begginer',
+                size: 12,
+                color: Color.fromRGBO(255, 255, 255, 1),
+                weight: FontWeight.w700,
+                align: TextAlign.start,
+              ),
+            ],
           ),
-        ]),
-      ]),
+        ],
+      ),
     );
   }
 }

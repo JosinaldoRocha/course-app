@@ -19,9 +19,9 @@ class YourCoursesRepository {
         courseTitle: 'English',
         backGroundColor: const Color.fromRGBO(19, 146, 219, 1),
         percentage: '15%'),
-    YoursCoursesModel(
-        courseTitle: 'Spanish',
-        backGroundColor: const Color.fromRGBO(255, 172, 43, 1),
-        percentage: '15%'),
+    // YoursCoursesModel(
+    //     courseTitle: 'Spanish',
+    //     backGroundColor: const Color.fromRGBO(255, 172, 43, 1),
+    //     percentage: '15%'),
   ];
 }

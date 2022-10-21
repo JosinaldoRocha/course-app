@@ -1,7 +1,7 @@
 import 'package:flutter/animation.dart';
 
 class LessonModel {
-  late String text;
+  late String lessonTitle;
   late String progressNumber;
   late String assetImage;
   late Color progressBarColor;
@@ -10,7 +10,7 @@ class LessonModel {
   LessonModel({
     required this.assetImage,
     required this.progressNumber,
-    required this.text,
+    required this.lessonTitle,
     required this.progressBarColor,
     required this.progressBarPercentage,
   });

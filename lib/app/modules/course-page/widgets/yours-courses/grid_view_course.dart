@@ -1,9 +1,14 @@
 import 'package:course_challenge/app/modules/course-page/repositories/lesson_repository.dart';
 import 'package:course_challenge/app/modules/course-page/widgets/yours-courses/main_card_your_courses.dart';
+import 'package:course_challenge/app/modules/home/models/your_courses_model.dart';
 import 'package:flutter/material.dart';
 
 class GridViewCoursePageWidget extends StatefulWidget {
-  const GridViewCoursePageWidget({super.key});
+  const GridViewCoursePageWidget({
+    super.key,
+    required this.teste,
+  });
+  final YoursCoursesModel teste;
 
   @override
   State<GridViewCoursePageWidget> createState() =>
@@ -24,9 +29,10 @@ class _GridViewCoursePageWidgetState extends State<GridViewCoursePageWidget> {
         mainAxisExtent: 189,
       ),
       itemCount: repository.length,
-      itemBuilder: (context, index) {
+      itemBuilder: (context, lesson) {
         return Center(
-          child: CardCoursePageWidget(lesson: repository[index]),
+          child: CardCoursePageWidget(
+              lesson: repository[lesson], course: widget.teste),
         );
       },
     );

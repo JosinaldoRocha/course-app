@@ -1,4 +1,4 @@
-import 'package:course_challenge/app/modules/course-page/models/card_spanish_page_model.dart';
+import 'package:course_challenge/app/modules/course-page/models/lesson_model.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 

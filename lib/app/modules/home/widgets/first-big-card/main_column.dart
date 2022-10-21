@@ -1,4 +1,4 @@
-import 'package:course_challenge/app/shared/text_widget.dart';
+import 'package:course_challenge/app/shared/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
 
 class MainColumnFirstBigCard extends StatelessWidget {

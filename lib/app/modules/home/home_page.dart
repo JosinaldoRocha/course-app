@@ -4,7 +4,7 @@ import 'package:course_challenge/app/modules/home/widgets/row-your-courses/list_
 import 'package:course_challenge/app/modules/home/widgets/row_perfil.dart';
 import 'package:course_challenge/app/modules/home/widgets/row_top_screen.dart';
 import 'package:course_challenge/app/modules/home/widgets/second-big-card/second_big_card.dart';
-import 'package:course_challenge/app/shared/text_widget.dart';
+import 'package:course_challenge/app/shared/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -47,7 +47,7 @@ class _HomePageState extends State<HomePage> {
               align: TextAlign.start,
             ),
             SizedBox(height: 22),
-            ListYourCoursesWidget(),
+            ListViewYourCourses(),
             SizedBox(height: 22),
             TextWidget(
               text: 'Popular courses',
@@ -67,7 +67,7 @@ class _HomePageState extends State<HomePage> {
               align: TextAlign.start,
             ),
             SizedBox(height: 22),
-            ListYourCoursesWidget(),
+            ListViewYourCourses(),
           ],
         ),
       ),

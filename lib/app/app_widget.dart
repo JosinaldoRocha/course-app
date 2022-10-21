@@ -1,4 +1,3 @@
-import 'package:course_challenge/app/modules/course-page/course_page.dart';
 import 'package:course_challenge/app/modules/home/home_page.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +16,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const HomePage(),
-        '/course-page': (context) => const CoursePage(),
+        //'/course-page': (context) =>  CoursePage(),
       },
     );
   }
