@@ -1,14 +1,17 @@
-import 'package:course_challenge/app/modules/course-page/repositories/lesson_repository.dart';
+import 'package:course_challenge/app/modules/course-page/models/lesson_model.dart';
 import 'package:course_challenge/app/modules/course-page/widgets/yours-courses/main_card_your_courses.dart';
-import 'package:course_challenge/app/modules/home/models/your_courses_model.dart';
+import 'package:course_challenge/app/modules/home-page/models/your_courses_model.dart';
+import 'package:course_challenge/app/modules/home-page/repositories/your_courses_repository.dart';
 import 'package:flutter/material.dart';
 
 class GridViewCoursePageWidget extends StatefulWidget {
   const GridViewCoursePageWidget({
     super.key,
-    required this.teste,
+    required this.course,
+    required this.lessonList,
   });
-  final YoursCoursesModel teste;
+  final YoursCoursesModel course;
+  final List<LessonModel> lessonList;
 
   @override
   State<GridViewCoursePageWidget> createState() =>
@@ -16,8 +19,7 @@ class GridViewCoursePageWidget extends StatefulWidget {
 }
 
 class _GridViewCoursePageWidgetState extends State<GridViewCoursePageWidget> {
-  final repository = LessonRepository().getAll();
-
+  final yoursCourses = YourCoursesRepository().getAll();
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
@@ -28,11 +30,24 @@ class _GridViewCoursePageWidgetState extends State<GridViewCoursePageWidget> {
         crossAxisSpacing: 12,
         mainAxisExtent: 189,
       ),
-      itemCount: repository.length,
+      itemCount: widget.lessonList.length,
       itemBuilder: (context, lesson) {
-        return Center(
-          child: CardCoursePageWidget(
-              lesson: repository[lesson], course: widget.teste),
+        return GestureDetector(
+          onTap: () async {
+            final result = await Navigator.pushNamed(
+              context,
+              '/tasks-page-menu',
+              arguments: widget.lessonList[lesson],
+            );
+            if (result != null) {
+              setState(() {});
+            }
+          },
+          child: Center(
+            child: CardCoursePageWidget(
+              lesson: widget.lessonList[lesson],
+            ),
+          ),
         );
       },
     );

@@ -11,8 +11,8 @@ class ManImageFirstCard extends StatelessWidget {
     return Positioned(
       left: 213,
       top: 12,
-      child: Image.network(
-        url,
+      child: Image.asset(
+        'assets/images/man.png',
         height: 225,
       ),
     );

@@ -1,13 +1,13 @@
 import 'package:flutter/animation.dart';
 
 class YoursCoursesModel {
+  late int courseID;
   late String courseTitle;
-  late Color backGroundColor;
-  late String percentage;
+  late Color color;
 
   YoursCoursesModel({
+    required this.courseID,
     required this.courseTitle,
-    required this.backGroundColor,
-    required this.percentage,
+    required this.color,
   });
 }

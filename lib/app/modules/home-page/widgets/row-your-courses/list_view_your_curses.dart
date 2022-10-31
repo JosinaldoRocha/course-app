@@ -1,7 +1,6 @@
-import 'package:course_challenge/app/modules/course-page/course_page.dart';
-import 'package:course_challenge/app/modules/home/models/your_courses_model.dart';
-import 'package:course_challenge/app/modules/home/repositories/your_courses_repository.dart';
-import 'package:course_challenge/app/modules/home/widgets/row-your-courses/progress_indicator_your_courses.dart';
+import 'package:course_challenge/app/modules/home-page/models/your_courses_model.dart';
+import 'package:course_challenge/app/modules/home-page/repositories/your_courses_repository.dart';
+import 'package:course_challenge/app/modules/home-page/widgets/row-your-courses/progress_indicator_your_courses.dart';
 import 'package:course_challenge/app/shared/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -31,17 +30,15 @@ class _ListViewYourCoursesState extends State<ListViewYourCourses> {
         itemCount: yourCourses.length,
         itemBuilder: (context, course) {
           return GestureDetector(
-            onTap: () {
-              Navigator.push(
+            onTap: () async {
+              final result = await Navigator.pushNamed(
                 context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    return CoursePage(
-                      course: yourCourses[course],
-                    );
-                  },
-                ),
+                '/course-page',
+                arguments: yourCourses[course],
               );
+              if (result != null) {
+                setState(() {});
+              }
             },
             child: _buildYourCourses(yourCourses[course]),
           );
@@ -56,7 +53,7 @@ class _ListViewYourCoursesState extends State<ListViewYourCourses> {
       height: 91,
       width: 114,
       decoration: BoxDecoration(
-        color: course.backGroundColor,
+        color: course.color,
         borderRadius: BorderRadius.circular(10),
       ),
       child: Stack(
@@ -65,16 +62,16 @@ class _ListViewYourCoursesState extends State<ListViewYourCourses> {
             left: 65,
             top: 32,
             child: ProgressIndicatorYourCourses(
-              color: course.backGroundColor,
+              course: course,
             ),
           ),
-          Positioned(
+          const Positioned(
             left: 71,
             top: 48,
             child: TextWidget(
-              text: course.percentage,
+              text: '80%',
               size: 8,
-              color: const Color.fromRGBO(52, 52, 52, 1),
+              color: Color.fromRGBO(52, 52, 52, 1),
               weight: FontWeight.w700,
               align: TextAlign.start,
             ),

@@ -1,9 +1,9 @@
-import 'package:course_challenge/app/modules/home/widgets/drawer.dart';
-import 'package:course_challenge/app/modules/home/widgets/first-big-card/first_big_card.dart';
-import 'package:course_challenge/app/modules/home/widgets/row-your-courses/list_view_your_curses.dart';
-import 'package:course_challenge/app/modules/home/widgets/row_perfil.dart';
-import 'package:course_challenge/app/modules/home/widgets/row_top_screen.dart';
-import 'package:course_challenge/app/modules/home/widgets/second-big-card/second_big_card.dart';
+import 'package:course_challenge/app/modules/home-page/widgets/drawer.dart';
+import 'package:course_challenge/app/modules/home-page/widgets/first-big-card/first_big_card.dart';
+import 'package:course_challenge/app/modules/home-page/widgets/row-your-courses/list_view_your_curses.dart';
+import 'package:course_challenge/app/modules/home-page/widgets/row_perfil.dart';
+import 'package:course_challenge/app/modules/home-page/widgets/row_top_screen.dart';
+import 'package:course_challenge/app/modules/home-page/widgets/second-big-card/second_big_card.dart';
 import 'package:course_challenge/app/shared/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
 

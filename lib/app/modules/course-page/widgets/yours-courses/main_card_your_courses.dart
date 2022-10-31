@@ -1,13 +1,10 @@
 import 'package:course_challenge/app/modules/course-page/models/lesson_model.dart';
 import 'package:course_challenge/app/modules/course-page/widgets/yours-courses/main_column_course.dart';
-import 'package:course_challenge/app/modules/home/models/your_courses_model.dart';
 import 'package:flutter/material.dart';
 
 class CardCoursePageWidget extends StatelessWidget {
-  const CardCoursePageWidget(
-      {super.key, required this.lesson, required this.course});
+  const CardCoursePageWidget({super.key, required this.lesson});
   final LessonModel lesson;
-  final YoursCoursesModel course;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +23,7 @@ class CardCoursePageWidget extends StatelessWidget {
           ),
         ],
       ),
-      child: ColumnCardCoursePageWidget(lesson: lesson, course: course),
+      child: ColumnCardCoursePageWidget(lesson: lesson),
     );
   }
 }

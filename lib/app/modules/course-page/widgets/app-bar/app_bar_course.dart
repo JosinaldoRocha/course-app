@@ -1,5 +1,5 @@
 import 'package:course_challenge/app/modules/course-page/widgets/app-bar/drop_down_button_course.dart';
-import 'package:course_challenge/app/modules/home/models/your_courses_model.dart';
+import 'package:course_challenge/app/modules/home-page/models/your_courses_model.dart';
 import 'package:course_challenge/app/shared/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +21,7 @@ class AppBarCoursePageWidget extends StatelessWidget {
                 const SizedBox(width: 11),
                 IconButton(
                   onPressed: () {
-                    Navigator.pop(context);
+                    Navigator.pop(context, course);
                   },
                   icon: const Icon(
                     Icons.arrow_back_ios_new_outlined,

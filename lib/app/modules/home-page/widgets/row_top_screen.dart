@@ -1,4 +1,4 @@
-import 'package:course_challenge/app/modules/home/widgets/drop_down_button_widget.dart';
+import 'package:course_challenge/app/modules/home-page/widgets/drop_down_button_widget.dart';
 import 'package:flutter/material.dart';
 
 class RowTopScreenWidget extends StatelessWidget {

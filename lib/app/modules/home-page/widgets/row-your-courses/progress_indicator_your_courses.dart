@@ -1,17 +1,17 @@
+import 'package:course_challenge/app/modules/home-page/models/your_courses_model.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
 class ProgressIndicatorYourCourses extends StatelessWidget {
   const ProgressIndicatorYourCourses({
     super.key,
-    required this.color,
+    required this.course,
   });
-
-  final Color color;
+  final YoursCoursesModel course;
 
   @override
   Widget build(BuildContext context) {
-    double progressValue = 15;
+    double progressValue = 80;
     return SizedBox(
       width: 30,
       height: 30,
@@ -20,7 +20,7 @@ class ProgressIndicatorYourCourses extends StatelessWidget {
           RadialAxis(
             maximumLabels: 0,
             labelOffset: 7,
-            labelFormat: '${progressValue.toStringAsFixed(0)}%',
+            labelFormat: '80%',
             axisLabelStyle: const GaugeTextStyle(
                 fontSize: 9,
                 fontFamily: 'Roboto',
@@ -39,7 +39,7 @@ class ProgressIndicatorYourCourses extends StatelessWidget {
             ),
             pointers: <GaugePointer>[
               RangePointer(
-                color: color,
+                color: course.color,
                 value: progressValue,
                 width: 1,
                 pointerOffset: 0.00,

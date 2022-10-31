@@ -1,14 +1,11 @@
 import 'package:course_challenge/app/modules/course-page/models/lesson_model.dart';
 import 'package:course_challenge/app/modules/course-page/widgets/percent_indicator_course.dart';
-import 'package:course_challenge/app/modules/home/models/your_courses_model.dart';
 import 'package:course_challenge/app/shared/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
 
 class ColumnCardCoursePageWidget extends StatelessWidget {
-  const ColumnCardCoursePageWidget(
-      {super.key, required this.lesson, required this.course});
+  const ColumnCardCoursePageWidget({super.key, required this.lesson});
   final LessonModel lesson;
-  final YoursCoursesModel course;
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +36,7 @@ class ColumnCardCoursePageWidget extends StatelessWidget {
           ),
           const SizedBox(height: 16),
           TextWidget(
-            text: course.courseTitle,
+            text: lesson.lessonTitle,
             size: 14,
             color: const Color.fromRGBO(23, 42, 135, 1),
             weight: FontWeight.w500,
@@ -47,7 +44,7 @@ class ColumnCardCoursePageWidget extends StatelessWidget {
           ),
           const SizedBox(height: 6),
           TextWidget(
-            text: lesson.progressNumber,
+            text: lesson.progressTasks,
             size: 18,
             color: const Color.fromRGBO(23, 42, 135, 1),
             weight: FontWeight.w500,
