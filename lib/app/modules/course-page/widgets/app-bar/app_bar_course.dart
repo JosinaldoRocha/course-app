@@ -11,7 +11,8 @@ class AppBarCoursePageWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 196,
-      color: const Color.fromRGBO(23, 42, 135, 1),
+      color: course.color,
+      //course.changeColor(),
       child: Padding(
         padding: const EdgeInsets.fromLTRB(0, 32, 0, 38),
         child: Column(

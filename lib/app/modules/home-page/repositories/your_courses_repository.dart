@@ -22,10 +22,5 @@ class YourCoursesRepository {
       courseTitle: 'English',
       color: const Color.fromRGBO(19, 146, 219, 1),
     ),
-    YoursCoursesModel(
-      courseID: 4,
-      courseTitle: 'Spanish',
-      color: const Color.fromRGBO(255, 172, 43, 1),
-    ),
   ];
 }

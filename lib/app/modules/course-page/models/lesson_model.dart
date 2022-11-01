@@ -4,30 +4,32 @@ import 'package:flutter/animation.dart';
 
 class LessonModel {
   late Color color;
-  late int lessonID;
+  late int courseId;
   late String lessonTitle;
   late String assetImage;
+  late int lessonId;
 
   LessonModel({
     required this.color,
-    required this.lessonID,
+    required this.courseId,
     required this.assetImage,
     required this.lessonTitle,
+    required this.lessonId,
   });
 
-  double get percentage => allTasksCompletedAmount() / tasksAmount();
-  String get progressTasks => '${allTasksCompletedAmount()} / ${tasksAmount()}';
+  double get percentage => numberOfTasksCompleted() / tasksAmount();
+  String get progressTasks => '${numberOfTasksCompleted()} / ${tasksAmount()}';
 
   int tasksAmount() {
     final List<TaskModel> task = List.from(allTasks);
-    task.retainWhere((element) => element.lessonId == lessonID);
+    task.retainWhere((element) => element.lessonId == lessonId);
     return task.length;
   }
 
-  int allTasksCompletedAmount() {
+  int numberOfTasksCompleted() {
     final List<TaskModel> task = List.from(allTasks);
     task.retainWhere(
-        (element) => element.lessonId == lessonID && element.taskFinished);
+        (element) => element.lessonId == lessonId && element.taskFinished);
     return task.length;
   }
 }
