@@ -102,11 +102,12 @@ class _TasksPageMenuState extends State<TasksPageMenu> {
                   weight: FontWeight.w500,
                   align: TextAlign.start,
                 ),
-                const SizedBox(
+                SizedBox(
                   width: 80,
                   height: 45,
                   child: TextField(
-                    decoration: InputDecoration(
+                    controller: task.taskController,
+                    decoration: const InputDecoration(
                       label: Text(
                         'R:',
                         style: TextStyle(color: Colors.white),
@@ -137,6 +138,7 @@ class _TasksPageMenuState extends State<TasksPageMenu> {
                       onChanged: (value) {
                         setState(() {
                           task.changeTaskFinished(value!);
+                          task.confirmCorrectAnswer(task.taskController.text);
                         });
                       },
                     ),

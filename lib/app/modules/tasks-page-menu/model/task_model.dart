@@ -7,6 +7,10 @@ class TaskModel {
   late bool taskFinished;
   late int taskId;
   late int lessonId;
+  late String firstCorrectAnswer;
+  late String secondCorrectAnswer;
+  bool positiveAnswer = false;
+  late TextEditingController taskController;
 
   TaskModel({
     required this.question,
@@ -15,9 +19,20 @@ class TaskModel {
     required this.taskFinished,
     required this.taskId,
     required this.lessonId,
+    required this.firstCorrectAnswer,
+    required this.secondCorrectAnswer,
+    required this.taskController,
   });
 
   void changeTaskFinished(bool finished) {
     taskFinished = finished;
+  }
+
+  void confirmCorrectAnswer(String controller) {
+    if (controller == firstCorrectAnswer || controller == secondCorrectAnswer) {
+      positiveAnswer = true;
+    } else {
+      positiveAnswer = false;
+    }
   }
 }
