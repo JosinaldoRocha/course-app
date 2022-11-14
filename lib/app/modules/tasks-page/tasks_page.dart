@@ -1,18 +1,18 @@
 import 'package:course_challenge/app/modules/course-page/models/lesson_model.dart';
-import 'package:course_challenge/app/modules/tasks-page-menu/model/task_model.dart';
-import 'package:course_challenge/app/modules/tasks-page-menu/task-repository/task_repository.dart';
+import 'package:course_challenge/app/modules/tasks-page/model/task_model.dart';
+import 'package:course_challenge/app/modules/tasks-page/task-repository/task_repository.dart';
 import 'package:course_challenge/app/shared/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
 
-class TasksPageMenu extends StatefulWidget {
-  const TasksPageMenu({super.key, required this.lesson});
+class TasksPage extends StatefulWidget {
+  const TasksPage({super.key, required this.lesson});
   final LessonModel lesson;
 
   @override
-  State<TasksPageMenu> createState() => _TasksPageMenuState();
+  State<TasksPage> createState() => _TasksPageState();
 }
 
-class _TasksPageMenuState extends State<TasksPageMenu> {
+class _TasksPageState extends State<TasksPage> {
   List<TaskModel> allTasks = [];
 
   void loadTasks() {

@@ -36,7 +36,7 @@ class _GridViewCoursePageWidgetState extends State<GridViewCoursePageWidget> {
           onTap: () async {
             final result = await Navigator.pushNamed(
               context,
-              '/tasks-page-menu',
+              '/tasks-page',
               arguments: widget.lessonList[lesson],
             );
             if (result != null) {

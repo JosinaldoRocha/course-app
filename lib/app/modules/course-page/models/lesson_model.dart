@@ -1,5 +1,5 @@
-import 'package:course_challenge/app/modules/tasks-page-menu/model/task_model.dart';
-import 'package:course_challenge/app/modules/tasks-page-menu/task-repository/task_repository.dart';
+import 'package:course_challenge/app/modules/tasks-page/model/task_model.dart';
+import 'package:course_challenge/app/modules/tasks-page/task-repository/task_repository.dart';
 import 'package:flutter/animation.dart';
 
 class LessonModel {

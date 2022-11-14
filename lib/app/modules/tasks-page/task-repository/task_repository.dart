@@ -1,4 +1,4 @@
-import 'package:course_challenge/app/modules/tasks-page-menu/model/task_model.dart';
+import 'package:course_challenge/app/modules/tasks-page/model/task_model.dart';
 import 'package:flutter/material.dart';
 
 List<TaskModel> allTasks = [
