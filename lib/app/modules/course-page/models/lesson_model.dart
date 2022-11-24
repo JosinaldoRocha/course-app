@@ -21,12 +21,14 @@ class LessonModel {
   String get progressTasks => '${numberOfTasksCompleted()} / ${tasksAmount()}';
 
   int tasksAmount() {
+    final allTasks = TaskRepository().getAll(lessonId);
     final List<TaskModel> task = List.from(allTasks);
     task.retainWhere((element) => element.lessonId == lessonId);
     return task.length;
   }
 
   int numberOfTasksCompleted() {
+    final allTasks = TaskRepository().getAll(lessonId);
     final List<TaskModel> task = List.from(allTasks);
     task.retainWhere(
         (element) => element.lessonId == lessonId && element.taskFinished);

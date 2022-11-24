@@ -1,6 +1,6 @@
-import 'package:course_challenge/app/modules/home-page/widgets/first-big-card/circle_avatar.dart';
-import 'package:course_challenge/app/modules/home-page/widgets/first-big-card/main_column.dart';
-import 'package:course_challenge/app/modules/home-page/widgets/first-big-card/man_image.dart';
+import 'package:course_challenge/app/modules/home-page/widgets/first-big-card/circle-avatar/circle_avatar.dart';
+import 'package:course_challenge/app/modules/home-page/widgets/first-big-card/main-column/main_column.dart';
+import 'package:course_challenge/app/modules/home-page/widgets/first-big-card/main-image/man_image.dart';
 import 'package:flutter/material.dart';
 
 class FirstBigCardWidget extends StatelessWidget {

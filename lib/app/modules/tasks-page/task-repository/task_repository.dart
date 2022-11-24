@@ -1,7 +1,8 @@
 import 'package:course_challenge/app/modules/tasks-page/model/task_model.dart';
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
 
-List<TaskModel> allTasks = [
+List<TaskModel> _allTasks = [
   TaskModel(
     question: 'Qual a tradução de "maçã", em espanhol?',
     answerOptions: 'a) Papaya\nb) Limón\nc) Manzana\nd) Sandía\n',
@@ -154,9 +155,31 @@ List<TaskModel> allTasks = [
 ];
 
 class TaskRepository {
-  List<TaskModel> getAll(int taskId) {
-    final List<TaskModel> task = List.from(allTasks);
-    task.retainWhere((element) => element.lessonId == taskId);
+  static Future<void> add(TaskModel task) async {
+    final box = Hive.box<TaskModel>('tasks');
+    await box.add(task);
+  }
+
+  void saveAllTasks() {
+    final box = Hive.box<TaskModel>('tasks');
+    final values = box.values.toList();
+    if (values.isEmpty) {
+      for (var task in _allTasks) {
+        box.put(task.taskId, task);
+      }
+    }
+  }
+
+  List<TaskModel> getAll(int lessonId) {
+    final box = Hive.box<TaskModel>('tasks');
+    final values = box.values.toList();
+    final List<TaskModel> task = List.from(values);
+    task.retainWhere((element) => element.lessonId == lessonId);
     return task;
+  }
+
+  static Future<void> changeStateTask(int position, TaskModel task) async {
+    final box = Hive.box<TaskModel>('tasks');
+    await box.put(position, task);
   }
 }

@@ -1,16 +1,13 @@
 import 'package:course_challenge/app/modules/course-page/models/lesson_model.dart';
-import 'package:course_challenge/app/modules/course-page/widgets/yours-courses/main_card_your_courses.dart';
-import 'package:course_challenge/app/modules/home-page/models/your_courses_model.dart';
+import 'package:course_challenge/app/modules/course-page/widgets/yours-courses/main-card/main_card_your_courses.dart';
 import 'package:course_challenge/app/modules/home-page/repositories/your_courses_repository.dart';
 import 'package:flutter/material.dart';
 
 class GridViewCoursePageWidget extends StatefulWidget {
   const GridViewCoursePageWidget({
     super.key,
-    required this.course,
     required this.lessonList,
   });
-  final YoursCoursesModel course;
   final List<LessonModel> lessonList;
 
   @override
