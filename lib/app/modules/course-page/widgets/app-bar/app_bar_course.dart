@@ -1,4 +1,4 @@
-import 'package:course_challenge/app/modules/course-page/widgets/app-bar/drop_down_button_course.dart';
+import 'package:course_challenge/app/modules/course-page/widgets/app-bar/drop-down/drop_down_button_course.dart';
 import 'package:course_challenge/app/modules/home-page/models/your_courses_model.dart';
 import 'package:course_challenge/app/shared/widgets/text_widget.dart';
 import 'package:flutter/material.dart';

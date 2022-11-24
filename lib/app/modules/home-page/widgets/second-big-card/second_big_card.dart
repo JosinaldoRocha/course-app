@@ -1,4 +1,4 @@
-import 'package:course_challenge/app/modules/home-page/widgets/second-big-card/main_column.dart';
+import 'package:course_challenge/app/modules/home-page/widgets/second-big-card/main-column/main_column.dart';
 import 'package:flutter/material.dart';
 
 class SecondBigCardWidget extends StatelessWidget {

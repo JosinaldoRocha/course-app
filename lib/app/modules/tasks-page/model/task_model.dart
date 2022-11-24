@@ -1,27 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
+part 'task_model.g.dart';
 
-class TaskModel {
+@HiveType(typeId: 0)
+class TaskModel extends HiveObject {
   late String question;
   late String answerOptions;
-  late Color color;
+  late Color? color;
+  @HiveField(2)
   late bool taskFinished;
   late int taskId;
   late int lessonId;
+  @HiveField(5)
   late String firstCorrectAnswer;
+  @HiveField(6)
   late String secondCorrectAnswer;
+  @HiveField(7)
   bool positiveAnswer = false;
-  late TextEditingController taskController;
+  late TextEditingController? taskController;
 
   TaskModel({
     required this.question,
     required this.answerOptions,
-    required this.color,
+    this.color,
     required this.taskFinished,
     required this.taskId,
     required this.lessonId,
     required this.firstCorrectAnswer,
     required this.secondCorrectAnswer,
-    required this.taskController,
+    this.taskController,
   });
 
   void changeTaskFinished(bool finished) {

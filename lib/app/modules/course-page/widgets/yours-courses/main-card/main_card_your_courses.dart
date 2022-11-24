@@ -1,5 +1,5 @@
 import 'package:course_challenge/app/modules/course-page/models/lesson_model.dart';
-import 'package:course_challenge/app/modules/course-page/widgets/yours-courses/main_column_course.dart';
+import 'package:course_challenge/app/modules/course-page/widgets/yours-courses/main-column/main_column_course.dart';
 import 'package:flutter/material.dart';
 
 class CardCoursePageWidget extends StatelessWidget {
